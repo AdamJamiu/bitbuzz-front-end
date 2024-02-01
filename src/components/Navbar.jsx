@@ -16,15 +16,15 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-row justify-end items-center gap-4 w-full">
-                <Link to="/" className="bg-white rounded-lg p-3 font-medium hover:bg-gray-100 ease transition-all text-sm">
+                <Link to="/auth/login" className="bg-white rounded-lg p-3 font-medium hover:bg-gray-100 ease transition-all text-sm">
                     Connect wallet
                 </Link>
 
-                <Link to="/" className="bg-white rounded-lg p-3 font-medium hover:bg-gray-100 ease transition-all text-sm">
+                <Link to="/auth/login" className="bg-white rounded-lg p-3 font-medium hover:bg-gray-100 ease transition-all text-sm">
                     Login
                 </Link>
 
-                <Link to="/signup" className="bg-primary-purple text-white rounded-lg p-3 font-medium hover:bg-purple-800 hover:text-white ease transition-all text-sm">
+                <Link to="/auth/signup" className="bg-primary-purple text-white rounded-lg p-3 font-medium hover:bg-purple-800 hover:text-white ease transition-all text-sm">
                     Signup
                 </Link>
             </div>

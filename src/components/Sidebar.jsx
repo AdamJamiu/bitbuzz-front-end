@@ -7,7 +7,7 @@ const Sidebar = () => {
     return (
         <div className="bg-[#0F0F0F] fixed left-0 bottom-0 top-20 py-10 px-5 w-64">
             <div className="flex flex-col justify-start items-start gap-3 text-white font-space-mono">
-                <NavLink to="home" className={({ isActive }) => isActive ? "flex flex-row justify-start items-center gap-5 py-3 px-4 bg-[#212121] w-full rounded-md ease transition-all" : "flex flex-row justify-start items-center gap-5 py-3 px-4 hover:bg-[#212121] w-full rounded-md ease transition-all"}>
+                <NavLink to="" className={({ isActive }) => isActive ? "flex flex-row justify-start items-center gap-5 py-3 px-4 bg-[#212121] w-full rounded-md ease transition-all" : "flex flex-row justify-start items-center gap-5 py-3 px-4 hover:bg-[#212121] w-full rounded-md ease transition-all"}>
                     <HomeOutlined />
                     <p>Home</p>
                 </NavLink>
