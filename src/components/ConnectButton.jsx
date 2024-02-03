@@ -11,7 +11,7 @@ import {
     useLanguage,
 } from '@particle-network/connect-react-ui';
 
-import '@particle-network/connect-react-ui/dist/index.css';
+// import '@particle-network/connect-react-ui/dist/index.css';
 // import { LoginOptions } from '@particle-network/auth';
 
 function ParticleConnectButton() {
@@ -42,10 +42,8 @@ function ParticleConnectButton() {
     }, [renderChains, isSwtichChain]);
 
     return (
-        <div>
+        <div className='rounded-3xl px-7 py-3 text-white text-sm font-medium  cursor-pointer bg-gray-600 hover:bg-gray-800 ease-in transition-all'>
             <ConnectButton></ConnectButton>
-
-
             {/* {account && <EvmDemo />} */}
         </div>
     );

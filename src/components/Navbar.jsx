@@ -5,7 +5,7 @@ import ParticleConnectButton from "./ConnectButton";
 const Navbar = ({ setIsOpen }) => {
     return (
         <nav className="w-full flex flex-row justify-between items-center bg-[#14171C] h-20 px-4 md:px-10 font-space-mono fixed border-b border-gray-800">
-            <div className="flex flex-row justify-start items-center gap-10 w-full">
+            <div className="flex flex-row justify-start items-center gap-3 sm:gap-10 w-full">
                 <div onClick={() => setIsOpen(prev => !prev)} className="p-1 rounded-md hover:bg-gray-900 cursor-pointer ease transition-all md:hidden block">
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 7H21" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -13,7 +13,8 @@ const Navbar = ({ setIsOpen }) => {
                         <path d="M3 17H21" stroke="white" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </div>
-                <img src={logo} />
+                {/* <img src={logo} /> */}
+                <h1 className="text-white text-xl font-semibold">BitBuzz</h1>
                 <div className="relative w-full md:bloc hidden">
                     <input type="search" className="w-full py-3 px-4 bg-transparent border border-[#202020] placeholder:text-white rounded-lg" placeholder="Search..." />
                     <svg className="absolute right-3 top-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,11 +27,11 @@ const Navbar = ({ setIsOpen }) => {
             <div className="flex flex-row justify-end items-center gap-4 w-full">
                 <ParticleConnectButton />
 
-                <Link to="/auth/login" className="rounded-lg p-3 font-medium  ease transition-all text-sm text-[#8b7ce5]">
+                <Link to="/auth/login" className="rounded-lg p-3 font-medium  ease transition-all text-sm text-[#8b7ce5] sm:block hidden">
                     Login
                 </Link>
 
-                <Link to="/auth/signup" className="text-[#8b7ce5] rounded-lg p-3 font-medium hover:bg-purple-800 hover:text-white ease transition-all text-sm">
+                <Link to="/auth/signup" className="text-[#8b7ce5] rounded-lg p-3 font-medium hover:bg-purple-800 hover:text-white ease transition-all text-sm sm:block hidden">
                     Signup
                 </Link>
             </div>

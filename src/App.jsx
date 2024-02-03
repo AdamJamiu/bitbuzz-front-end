@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import PoolsPage from "./pages/Pools";
 import GalleryPage from "./pages/Gallery";
 import "./App.css"
+import ReelPage from "./pages/Reels";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route index element={<Home />} path="/" />
           <Route index element={<GalleryPage />} path="gallery" />
           <Route element={<PoolsPage />} path="pools" />
-          <Route element={<PoolsPage />} path="reel" />
+          <Route element={<ReelPage />} path="reel" />
           <Route element={<PoolsPage />} path="upload" />
         </Route>
       </Routes>
