@@ -27,11 +27,11 @@ const Navbar = ({ setIsOpen }) => {
             <div className="flex flex-row justify-end items-center gap-4 w-full">
                 <ParticleConnectButton />
 
-                <Link to="/auth/login" className="rounded-lg p-3 font-medium  ease transition-all text-sm text-[#8b7ce5] sm:block hidden">
+                <Link to="/auth/login" className="rounded-lg p-3 font-medium  ease transition-all text-sm text-white sm:block hidden">
                     Login
                 </Link>
 
-                <Link to="/auth/signup" className="text-[#8b7ce5] rounded-lg p-3 font-medium hover:bg-purple-800 hover:text-white ease transition-all text-sm sm:block hidden">
+                <Link to="/auth/signup" className="text-white rounded-lg p-3 font-medium hover:bg-purple-800 hover:text-white ease transition-all text-sm sm:block hidden">
                     Signup
                 </Link>
             </div>

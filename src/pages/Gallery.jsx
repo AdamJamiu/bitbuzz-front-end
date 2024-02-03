@@ -12,23 +12,25 @@ const GalleryPage = () => {
         <div className="w-full p-5 font-space-mono">
             <h1 className="text-xl font-semibold text-white">Dashboard</h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-10 gap-5">
-                <div className="rounded-lg py-6 px-4 w-full bg-primary-purple text-white text-center">
-                    <h1 className="text-xl font-semibold">$550k</h1>
-                    <p>Revenue earned</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-10 gap-5">
+                <div className="rounded-lg py-6 px-4 w-full bg-[#0C1116] text-white">
+                    <p className="text-sm text-gray-400 font-medium00">Revenue earned</p>
+                    <p className="text-sm text-white mt-1 mb-4 font-medium">Total Revenue earned</p>
+                    <h1 className="text-3xl font-semibold">$550k</h1>
                 </div>
-                <div className="rounded-lg py-6 px-4 w-full bg-primary-purple text-white text-center">
-                    <h1 className="text-xl font-semibold">$550k</h1>
-                    <p>Revenue earned</p>
+
+                <div className="rounded-lg py-6 px-4 w-full bg-[#0C1116] text-white">
+                    <p className="text-sm text-gray-400 font-medium00">Revenue earned</p>
+                    <p className="text-sm text-white mt-1 mb-4 font-medium">Total Revenue earned</p>
+                    <h1 className="text-3xl font-semibold">$550k</h1>
                 </div>
-                <div className="rounded-lg py-6 px-4 w-full bg-primary-purple text-white text-center">
-                    <h1 className="text-xl font-semibold">$550k</h1>
-                    <p>Revenue earned</p>
+
+                <div className="rounded-lg py-6 px-4 w-full bg-[#0C1116] text-white">
+                    <p className="text-sm text-gray-400 font-medium00">Revenue earned</p>
+                    <p className="text-sm text-white mt-1 mb-4 font-medium">Total Revenue earned</p>
+                    <h1 className="text-3xl font-semibold">$550k</h1>
                 </div>
-                <div className="rounded-lg py-6 px-4 w-full bg-primary-purple text-white text-center">
-                    <h1 className="text-xl font-semibold">$550k</h1>
-                    <p>Revenue earned</p>
-                </div>
+
             </div>
 
             <h1 className="text-xl font-semibold text-white">Top Videos</h1>

@@ -11,14 +11,14 @@ import {
     useLanguage,
 } from '@particle-network/connect-react-ui';
 
-// import '@particle-network/connect-react-ui/dist/index.css';
+import '@particle-network/connect-react-ui/dist/index.css';
 // import { LoginOptions } from '@particle-network/auth';
 
 function ParticleConnectButton() {
-    const account = useAccount();
+    // const account = useAccount();
     const connectKit = useConnectKit();
-    const { theme, setTheme } = useParticleTheme();
-    const { language, changLanguage } = useLanguage();
+    // const { theme, setTheme } = useParticleTheme();
+    // const { language, changLanguage } = useLanguage();
 
     const provider = useParticleProvider();
 
@@ -42,7 +42,8 @@ function ParticleConnectButton() {
     }, [renderChains, isSwtichChain]);
 
     return (
-        <div className='rounded-3xl px-7 py-3 text-white text-sm font-medium  cursor-pointer bg-gray-600 hover:bg-gray-800 ease-in transition-all'>
+        <div >
+            {/* <button className='rounded-3xl px-7 py-3 text-white text-sm font-medium  cursor-pointer bg-[#2D2D2D] hover:bg-gray-800 ease-in transition-all border border-gray-700'></button> */}
             <ConnectButton></ConnectButton>
             {/* {account && <EvmDemo />} */}
         </div>
