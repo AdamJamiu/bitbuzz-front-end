@@ -3,7 +3,7 @@ import { useState } from "react";
 import { VisibilityOffOutlined, VisibilityRounded } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import googleImg from "/images/google-logo.svg"
-import facebookImg from "/images/facebook.svg"
+import particleImg from "/images/1024.png"
 import twitterImg from "/images/twitter.svg"
 import { Link } from "react-router-dom";
 
@@ -45,24 +45,17 @@ const SignInPage = () => {
                     <p className="font-bold text-primary-purple">Forgot password?</p>
                 </div>
 
-                <hr className="my-10" />
+                <div className="w-full relative">
+                    <hr className="my-10" />
+                    <p className="absolute -top-3 bg-white text-[#280F4499] right-[50%]">Or</p>
+                </div>
 
-                <button className="w-full rounded-md border-lg border border-app-black py-3 hover:bg-gray-100 flex flex-row justify-center items-center gap-3 mb-5">
-                    <img className="h-6" src={googleImg} />
-                    <span>Google</span>
+                <button type="submit" className="w-full rounded-md border-lg border border-app-black py-3 hover:bg-purple-100 flex flex-row justify-center items-center gap-3 my-5 ease transition-all">
+                    <img className="h-5" src={particleImg} />
+                    <span>Particle</span>
                 </button>
 
-                <button className="w-full rounded-md border-lg border border-app-black py-3 hover:bg-gray-100 flex flex-row justify-center items-center gap-3">
-                    <img className="h-7" src={facebookImg} />
-                    <span>Facebook</span>
-                </button>
-
-                <button type="submit" className="w-full rounded-md border-lg border border-app-black py-3 hover:bg-gray-100 flex flex-row justify-center items-center gap-3 my-5">
-                    <img className="h-5" src={twitterImg} />
-                    <span>Twitter</span>
-                </button>
-
-                <p className="font-medium">Don't have an account? <Link to="/signup" className="hover:underline font-semibold">Sign up</Link></p>
+                <p className="font-medium">Don't have an account? <Link to="/auth/signup" className="hover:underline font-semibold">Sign up</Link></p>
 
             </form>
 
