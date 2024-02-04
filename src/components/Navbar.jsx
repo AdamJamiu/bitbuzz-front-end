@@ -14,7 +14,7 @@ const Navbar = ({ setIsOpen }) => {
                     </svg>
                 </div>
                 {/* <img src={logo} /> */}
-                <h1 className="text-white text-xl font-semibold">BitBuzz</h1>
+                <Link to="/" className="text-white text-xl font-semibold">BitBuzz</Link>
                 <div className="relative w-full md:bloc hidden">
                     <input type="search" className="w-full py-3 px-4 bg-transparent border border-[#202020] placeholder:text-white rounded-lg" placeholder="Search..." />
                     <svg className="absolute right-3 top-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

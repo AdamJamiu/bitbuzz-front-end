@@ -8,20 +8,23 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination"
 import MovieLoadingSkeleton from "../components/MovieLoadingSkeleton";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const { data, isLoading } = useQuery({
         queryKey: ["get-movies"],
         queryFn: () => httpClient.get("discover/movie").then(res => res?.data),
         refetchOnMount: true,
-        refetchOnWindowFocus: false
+        refetchOnWindowFocus: false,
+        retry: Infinity
     })
 
     const { data: popular, isLoading: popularLoading } = useQuery({
         queryKey: ["get-movies-popular"],
         queryFn: () => httpClient.get("movie/popular").then(res => res?.data),
         refetchOnMount: true,
-        refetchOnWindowFocus: false
+        refetchOnWindowFocus: false,
+        retry: Infinity
     })
     // console.log(data)
     return (
@@ -29,37 +32,26 @@ const Home = () => {
 
             <h2 className="font-semibold my-5 text-white">Categories</h2>
 
-            <div className="w-full flex flex-row justify-start items-center gap-4 mt-4 mb-16 text-sm overflow-hidden">
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
+            <div className="w-full flex flex-row justify-start items-center gap-4 mt-4 text-sm overflow-hidden">
+
+                <button className="py-2 px-4 rounded-md font-medium bg-[#FFFFFF1A] hover:bg-white hover:text-gray-600 text-gray-200 ease transition-all">
                     All
                 </button>
 
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
-                    Music
+                <button className="py-2 px-4 rounded-md font-medium bg-[#FFFFFF1A] hover:bg-white hover:text-gray-600 text-gray-200 ease transition-all">
+                    Action
                 </button>
 
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
-                    Trailers
+                <button className="py-2 px-4 rounded-md font-medium bg-[#FFFFFF1A] hover:bg-white hover:text-gray-600 text-gray-200 ease transition-all">
+                    Adventure
                 </button>
 
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
-                    Comedy
+                <button className="py-2 px-4 rounded-md font-medium bg-[#FFFFFF1A] hover:bg-white hover:text-gray-600 text-gray-200 ease transition-all">
+                    Horror
                 </button>
 
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
-                    Drama
-                </button>
-
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
-                    Sports
-                </button>
-
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
-                    Cooking
-                </button>
-
-                <button className="py-2 px-4 rounded-md hover:bg-primary-purple font-medium bg-white hover:text-white ease transition-all">
-                    Fashion
+                <button className="py-2 px-4 rounded-md font-medium bg-[#FFFFFF1A] hover:bg-white hover:text-gray-600 text-gray-200 ease transition-all">
+                    Thriller
                 </button>
             </div>
 
@@ -94,11 +86,10 @@ const Home = () => {
                                 spaceBetween: 20,
                             },
                             "@1.50": {
-                                slidesPerView: 2.4,
+                                slidesPerView: 3.4,
                                 spaceBetween: 20,
                             },
                         }}
-                        slidesPerView={6}
                         spaceBetween={25}
                         modules={[Scrollbar, Pagination, Autoplay]}
                         className="w-full pb-12"
@@ -106,16 +97,18 @@ const Home = () => {
                         {popular?.results?.map((item, index) => (
 
                             <SwiperSlide key={index} className="group text-white rounded-xl cursor-pointer hover:opacity-90 ease-in-out transition-opacity">
-                                <div className="relative overflow-hidden">
-                                    <img src={`https://image.tmdb.org/t/p/w500${item?.poster_path}`} className="rounded-lg group-hover:scale-105 ease-in-out transition-transform duration-300" />
-                                </div>
-                                <div className="absolute hidden group-hover:flex ease-in transition-all duration-300 top-0 bottom-0 left-0 w-full h-full black-transparent flex-col justify-between p-4 z-50 rounded-lg">
-                                    <p className="text-white font-semibold">{item?.release_date}</p>
-                                    <div className="p-3 bg-white w-fit rounded-full self-center">
-                                        <PlayArrowIcon fontSize="large" color="error" />
+                                <Link to={`${item?.id}`}>
+                                    <div className="relative overflow-hidden">
+                                        <img src={`https://image.tmdb.org/t/p/w500${item?.poster_path}`} className="rounded-lg group-hover:scale-105 ease-in-out transition-transform duration-300" />
                                     </div>
-                                    <p className="text-white font-semibold">{item?.title}</p>
-                                </div>
+                                    <div className="absolute hidden group-hover:flex ease-in transition-all duration-300 top-0 bottom-0 left-0 w-full h-full black-transparent flex-col justify-between p-4 z-50 rounded-lg">
+                                        <p className="text-white font-semibold">{item?.release_date}</p>
+                                        <div className="p-3 bg-white w-fit rounded-full self-center">
+                                            <PlayArrowIcon fontSize="large" color="error" />
+                                        </div>
+                                        <p className="text-white font-semibold">{item?.title}</p>
+                                    </div>
+                                </Link>
                             </SwiperSlide>
 
                         ))}
@@ -130,18 +123,19 @@ const Home = () => {
                     <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-14">
                         {data?.results?.map((item, index) => (
                             <div className="relative group overflow-hidden h-full rounded-md" key={index}>
-                                <div className="absolute hidden group-hover:flex ease-in transition-all duration-300 top-0 bottom-0 left-0 w-full h-full black-transparent flex-col justify-between p-4 z-40">
-                                    <p className="text-white font-semibold">{item?.release_date}</p>
-                                    <div className="p-3 bg-white w-fit rounded-full self-center">
-                                        <PlayArrowIcon fontSize="large" color="error" />
+                                <Link to={`${item?.id}`}>
+
+                                    <div className="absolute hidden group-hover:flex ease-in transition-all duration-300 top-0 bottom-0 left-0 w-full h-full black-transparent flex-col justify-between p-4 z-40">
+                                        <p className="text-white font-semibold">{item?.release_date}</p>
+                                        <div className="p-3 bg-white w-fit rounded-full self-center">
+                                            <PlayArrowIcon fontSize="large" color="error" />
+                                        </div>
+                                        <p className="text-white font-semibold">{item?.title}</p>
                                     </div>
-                                    <p className="text-white font-semibold">{item?.title}</p>
-                                </div>
-                                <div className="relative overflow-hidden">
-                                    <img src={`https://image.tmdb.org/t/p/w500${item?.poster_path}`} className="rounded-lg group-hover:scale-105 ease-in-out transition-transform duration-300" />
-                                </div>
-                                <div className="">
-                                </div>
+                                    <div className="relative overflow-hidden">
+                                        <img src={`https://image.tmdb.org/t/p/w500${item?.poster_path}`} className="rounded-lg group-hover:scale-105 ease-in-out transition-transform duration-300" />
+                                    </div>
+                                </Link>
                             </div>
                         ))}
                     </div>
