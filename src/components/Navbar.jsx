@@ -4,10 +4,10 @@ import ParticleConnectButton from "./ConnectButton";
 
 const Navbar = ({ setIsOpen }) => {
     return (
-        <nav className="w-full flex flex-row justify-between items-center bg-[#14171C] h-20 px-4 md:px-10 font-space-mono fixed border-b border-gray-800">
+        <nav className="w-full flex flex-row justify-between items-center bg-[#14171C] h-20 px-4 md:px-10 font-space-mono fixed border-b border-gray-800 z-50">
             <div className="flex flex-row justify-start items-center gap-3 sm:gap-10 w-full">
                 <div onClick={() => setIsOpen(prev => !prev)} className="p-1 rounded-md hover:bg-gray-900 cursor-pointer ease transition-all md:hidden block">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="25" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 7H21" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
                         <path d="M3 17H21" stroke="white" stroke-width="2" stroke-linecap="round" />

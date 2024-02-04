@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 const GalleryPage = () => {
     return (
         <div className="w-full p-5 font-space-mono">
-            <h1 className="text-xl font-semibold text-white">Dashboard</h1>
+            <h1 className="text-lg font-medium text-gray-200">Dashboard</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-10 gap-5">
                 <div className="rounded-lg py-6 px-4 w-full bg-[#0C1116] text-white">
