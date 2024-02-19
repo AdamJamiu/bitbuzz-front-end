@@ -15,7 +15,7 @@ export default {
         "app-black": "#191919"
       },
       backgroundImage: {
-        "login-img": "url('/images/bit-buzz-signin.svg')",
+        "auth-img": "url('/images/authSideImg.svg')",
       }
     },
   },
